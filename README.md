@@ -129,6 +129,8 @@ mkfs.fat: warning - lowercase labels might not work properly with DOS or Windows
 ```
 > Ignore `lowercase labels` warnings. Remember to replace **`X`** with your USB device.
 
+> The **dosfstools** package is required for the above command.
+
 ## Install Grub2 on the USB Flash Drive
 
 We have successfully prepared our USB Flash Drive to install grub bootloader on it. Now let's install it, follow the steps below carefully. If you use the wrong syntax, you will receive an error stating _"Installation is impossible. Aborting"_ or something similar.
@@ -166,7 +168,7 @@ Installing for x86_64-efi platform.
 Installation finished. No error reported.
 ```
 
-* You can varify the installation by listing the contents of `/mnt`
+* You can verify the installation by listing the contents of `/mnt`
 ```
 # ls -l /mnt/boot/grub 
 total 80
@@ -357,7 +359,7 @@ For example, to use **Tela** theme, replace every instance of `Stylish` with the
 
 ### Boot ISO from installed Linux OS
 
-Well, Now you know how to add a menu entry to boot an ISO file. You can boot the ISO file the same way from an installed Linux OS. It's helpful when you just want to try out a distro, or when you don't have an USB arround or when you want to install the ISO on a USB drive. All you need to do is, Add the menu entry to `/etc/grub.d/40_custom` file and update the grub config file. For Example :
+Well, Now you know how to add a menu entry to boot an ISO file. You can boot the ISO file the same way from an installed Linux OS. It's helpful when you just want to try out a distro, or when you don't have an USB around or when you want to install the ISO on a USB drive. All you need to do is, Add the menu entry to `/etc/grub.d/40_custom` file and update the grub config file. For Example :
 
 ```
 $ sudo vim /etc/grub.d/40_custom
